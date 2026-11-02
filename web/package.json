@@ -1,0 +1,17 @@
+{
+  "name": "sp500-momentum-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript front-end for the S&P 500 momentum paper trader",
+  "scripts": {
+    "build": "esbuild src/app.ts --bundle --minify --format=iife --outfile=../docs/app.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.0"
+  }
+}

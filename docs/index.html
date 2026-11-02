@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S&P 500 Momentum, paper trading vs the index</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>S&amp;P 500 Momentum</h1>
+      <p class="sub">A virtual portfolio that holds the strongest S&amp;P 500 stocks and rebalances every month,
+        tracked live against the S&amp;P 500 itself.</p>
+    </header>
+
+    <section id="cards" class="cards"></section>
+
+    <section class="chart-wrap">
+      <canvas id="chart" aria-label="Strategy value versus the benchmark over time"></canvas>
+    </section>
+
+    <section class="holdings">
+      <h2>Current holdings</h2>
+      <table id="holdings">
+        <thead><tr><th>Ticker</th><th>Weight</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p id="meta"></p>
+      <p class="disclaimer">
+        Paper trading only, not investment advice. Prices are free daily closes from Yahoo Finance and may have
+        gaps. No trading costs or slippage are modelled. The portfolio starts from the day it went live, so there
+        is no survivorship bias, but it also has only a short track record so far.
+      </p>
+      <p class="src"><a id="repo-link" href="#">Source code and method on GitHub</a></p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

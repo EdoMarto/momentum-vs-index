@@ -1,0 +1,121 @@
+{
+  "updated": "2026-10-30",
+  "started_on": "2026-10-30",
+  "start_capital": 10000.0,
+  "benchmark": "SPY",
+  "params": {
+    "top_n": 20,
+    "lookback_trading_days": 126,
+    "rebalance": "monthly"
+  },
+  "series": {
+    "dates": [
+      "2026-10-30"
+    ],
+    "strategy": [
+      10000.0
+    ]
+  },
+  "benchmark_series": {
+    "dates": [
+      "2026-10-30"
+    ],
+    "values": [
+      10000.0
+    ]
+  },
+  "holdings": [
+    {
+      "ticker": "MRNA",
+      "weight": 0.05
+    },
+    {
+      "ticker": "CRWD",
+      "weight": 0.05
+    },
+    {
+      "ticker": "CRL",
+      "weight": 0.05
+    },
+    {
+      "ticker": "DELL",
+      "weight": 0.05
+    },
+    {
+      "ticker": "PANW",
+      "weight": 0.05
+    },
+    {
+      "ticker": "VEEV",
+      "weight": 0.05
+    },
+    {
+      "ticker": "MPC",
+      "weight": 0.05
+    },
+    {
+      "ticker": "RVTY",
+      "weight": 0.05
+    },
+    {
+      "ticker": "NTAP",
+      "weight": 0.05
+    },
+    {
+      "ticker": "P",
+      "weight": 0.05
+    },
+    {
+      "ticker": "ILMN",
+      "weight": 0.05
+    },
+    {
+      "ticker": "IQV",
+      "weight": 0.05
+    },
+    {
+      "ticker": "VLO",
+      "weight": 0.05
+    },
+    {
+      "ticker": "MU",
+      "weight": 0.05
+    },
+    {
+      "ticker": "BBY",
+      "weight": 0.05
+    },
+    {
+      "ticker": "PSX",
+      "weight": 0.05
+    },
+    {
+      "ticker": "ZBRA",
+      "weight": 0.05
+    },
+    {
+      "ticker": "HPE",
+      "weight": 0.049999999999999996
+    },
+    {
+      "ticker": "HUM",
+      "weight": 0.049999999999999996
+    },
+    {
+      "ticker": "DDOG",
+      "weight": 0.049999999999999996
+    }
+  ],
+  "metrics": {
+    "strategy": {
+      "total_return": 0.0,
+      "cagr": 0.0,
+      "max_drawdown": 0.0
+    },
+    "benchmark": {
+      "total_return": 0.0,
+      "cagr": 0.0,
+      "max_drawdown": 0.0
+    }
+  }
+}
