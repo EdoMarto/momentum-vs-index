@@ -44,15 +44,22 @@ function renderCards(d: Data): void {
   const lastStrat = d.series.strategy[d.series.strategy.length - 1] ?? d.start_capital;
   const lastBench = d.benchmark_series.values[d.benchmark_series.values.length - 1] ?? d.start_capital;
   const edge = s.total_return - b.total_return;
-  const el = document.getElementById("cards")!;
-  el.innerHTML = [
+  document.getElementById("cards-strategy")!.innerHTML = [
     card("Strategy value", money(lastStrat), signed(s.total_return) + " total", cls(s.total_return)),
-    card("S&P 500 value", money(lastBench), signed(b.total_return) + " total", cls(b.total_return)),
     card("Strategy return", signed(s.total_return), "CAGR " + signed(s.cagr), cls(s.total_return)),
-    card(`${d.benchmark} return`, signed(b.total_return), "CAGR " + signed(b.cagr), cls(b.total_return)),
-    card("Edge vs index", signed(edge), "strategy minus benchmark", cls(edge)),
     card("Strategy max drawdown", pct(s.max_drawdown), "deepest fall from a peak", cls(s.max_drawdown)),
   ].join("");
+  document.getElementById("cards-benchmark")!.innerHTML = [
+    card("S&P 500 value", money(lastBench), signed(b.total_return) + " total", cls(b.total_return)),
+    card("S&P 500 return", signed(b.total_return), "CAGR " + signed(b.cagr), cls(b.total_return)),
+    card("S&P 500 max drawdown", pct(b.max_drawdown), "deepest fall from a peak", cls(b.max_drawdown)),
+  ].join("");
+  document.getElementById("cards-edge")!.innerHTML = card(
+    "Edge vs index",
+    signed(edge),
+    "strategy minus benchmark",
+    cls(edge),
+  );
 }
 
 function renderChart(d: Data): void {
@@ -181,5 +188,5 @@ async function main(): Promise<void> {
 }
 
 main().catch((e) => {
-  document.getElementById("cards")!.textContent = "Could not load data: " + e;
+  document.getElementById("cards-strategy")!.textContent = "Could not load data: " + e;
 });
