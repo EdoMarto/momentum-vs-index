@@ -1,4 +1,4 @@
-# S&P 500 Momentum, paper trading vs the index
+# S&P 500 Momentum, active trading vs the index
 
 A virtual portfolio that holds the strongest S&P 500 stocks and rebalances every month, tracked live against
 the S&P 500 itself. A small Python job updates it every day and a static TypeScript page shows the result.
