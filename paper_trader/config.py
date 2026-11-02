@@ -20,8 +20,5 @@ FEE_BPS = 0.0                  # round-trip trading fee in basis points, 0 keeps
 # Benchmark
 BENCHMARK = "SPY"              # S&P 500 ETF
 
-# Site
-MAX_TRADES_ON_SITE = 50       # most recent trades written to data.json; the full log stays in trades.csv
-
 # Data
 PRICE_LOOKBACK_DAYS = 400      # calendar days of history to pull so the momentum window is always covered

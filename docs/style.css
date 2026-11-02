@@ -47,6 +47,21 @@ tr:last-child td { border-bottom: 0; }
 .trade { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
 .trade.buy { color: var(--good); background: rgba(53,192,138,0.12); }
 .trade.sell { color: var(--bad); background: rgba(229,96,77,0.12); }
+.count { color: var(--muted); font-size: 13px; font-weight: 400; }
+
+.filters { display: flex; gap: 10px; margin: 8px 0 12px; flex-wrap: wrap; }
+.filters input, .filters select {
+  background: var(--panel); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px 10px; font: inherit;
+}
+.filters input { flex: 1; min-width: 200px; }
+.filters input::placeholder { color: var(--muted); }
+
+/* Scrollable trade list: shows about 20 rows, then scrolls, with a pinned header. */
+.scroll { max-height: 740px; overflow-y: auto; border: 1px solid var(--line); border-radius: 12px; }
+.scroll table { border: 0; border-radius: 0; }
+.scroll thead th { position: sticky; top: 0; z-index: 1; background: var(--panel); }
+.empty { color: var(--muted); }
 
 footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
 .disclaimer { max-width: 70ch; }

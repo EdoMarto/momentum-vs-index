@@ -23,6 +23,7 @@ interface Data {
   metrics: { strategy: Metrics; benchmark: Metrics };
 }
 
+const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]!);
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
 const signed = (x: number) => `${x >= 0 ? "+" : ""}${(x * 100).toFixed(1)}%`;
 const money = (x: number) =>
@@ -112,7 +113,6 @@ function renderChart(d: Data): void {
 
 function renderHoldings(d: Data): void {
   const body = document.querySelector("#holdings tbody")!;
-  const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]!);
   body.innerHTML = d.holdings
     .map(
       (h) =>
@@ -121,17 +121,14 @@ function renderHoldings(d: Data): void {
     .join("");
 }
 
-function renderTrades(d: Data): void {
-  const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]!);
-  const body = document.querySelector("#trades tbody")!;
-  const trades = d.trades ?? [];
-  if (trades.length === 0) {
-    body.innerHTML = `<tr><td colspan="4">No trades yet. The first rebalance is logged here.</td></tr>`;
-    return;
+type Trade = Data["trades"][number];
+let allTrades: Trade[] = [];
+
+function tradeRows(rows: Trade[]): string {
+  if (rows.length === 0) {
+    return `<tr><td colspan="4" class="empty">No trades match this filter.</td></tr>`;
   }
-  const link = document.getElementById("trades-link") as HTMLAnchorElement;
-  link.href = `${REPO_URL}/blob/main/state/trades.csv`;
-  body.innerHTML = trades
+  return rows
     .map((t) => {
       const buy = t.action === "BUY";
       const tag = `<span class="trade ${buy ? "buy" : "sell"}">${buy ? "Bought" : "Sold"}</span>`;
@@ -140,6 +137,27 @@ function renderTrades(d: Data): void {
       )}</td></tr>`;
     })
     .join("");
+}
+
+function applyTradeFilters(): void {
+  const q = (document.getElementById("trade-search") as HTMLInputElement).value.trim().toLowerCase();
+  const action = (document.getElementById("trade-action") as HTMLSelectElement).value;
+  const rows = allTrades.filter((t) => {
+    if (action !== "ALL" && t.action !== action) return false;
+    if (q && !`${t.ticker} ${t.name ?? ""}`.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  document.querySelector("#trades tbody")!.innerHTML = tradeRows(rows);
+  document.getElementById("trades-count")!.textContent =
+    rows.length === allTrades.length ? `(${allTrades.length})` : `(${rows.length} of ${allTrades.length})`;
+}
+
+function renderTrades(d: Data): void {
+  allTrades = d.trades ?? [];
+  (document.getElementById("trades-link") as HTMLAnchorElement).href = `${REPO_URL}/blob/main/state/trades.csv`;
+  document.getElementById("trade-search")!.addEventListener("input", applyTradeFilters);
+  document.getElementById("trade-action")!.addEventListener("change", applyTradeFilters);
+  applyTradeFilters();
 }
 
 function renderMeta(d: Data): void {
