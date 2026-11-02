@@ -12,6 +12,10 @@ Beating the market is hard, and this project is built to show it. According to S
 is that a simple active strategy like this one loses to the index over time. Running it live, side by side with
 the benchmark, is a concrete way to see why a cheap passive index fund is usually the smarter default.
 
+Note that this simulation is generous to the active side: it charges no fees, trading costs, or taxes, so what
+you see is a best case for the strategy. Those costs are a big part of why active investing loses in real life,
+so once you add them the gap only widens. In other words, if the strategy struggles even here, that is the point.
+
 ## The strategy
 Cross-sectional momentum, about as simple as it gets:
 - Every month, rank all S&P 500 stocks by their last 6 months of return.
