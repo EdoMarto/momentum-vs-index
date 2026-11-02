@@ -42,10 +42,12 @@ function renderCards(d: Data): void {
   const s = d.metrics.strategy;
   const b = d.metrics.benchmark;
   const lastStrat = d.series.strategy[d.series.strategy.length - 1] ?? d.start_capital;
+  const lastBench = d.benchmark_series.values[d.benchmark_series.values.length - 1] ?? d.start_capital;
   const edge = s.total_return - b.total_return;
   const el = document.getElementById("cards")!;
   el.innerHTML = [
     card("Strategy value", money(lastStrat), signed(s.total_return) + " total", cls(s.total_return)),
+    card("S&P 500 value", money(lastBench), signed(b.total_return) + " total", cls(b.total_return)),
     card("Strategy return", signed(s.total_return), "CAGR " + signed(s.cagr), cls(s.total_return)),
     card(`${d.benchmark} return`, signed(b.total_return), "CAGR " + signed(b.cagr), cls(b.total_return)),
     card("Edge vs index", signed(edge), "strategy minus benchmark", cls(edge)),
