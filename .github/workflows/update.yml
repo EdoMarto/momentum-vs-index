@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Refresh the S&P 500 members
+        run: python -m paper_trader.refresh_universe
+
       - name: Run the daily update
         run: python -m paper_trader.run
 
@@ -33,7 +36,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add state/ docs/data.json
+          git add state/ docs/data.json universe.txt paper_trader/names.json
           if git diff --cached --quiet; then
             echo "Nothing changed."
           else

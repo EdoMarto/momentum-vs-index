@@ -1,3 +1,4 @@
+# S&P 500 members, refreshed automatically from the official constituents list.
 A
 AAPL
 ABBV
