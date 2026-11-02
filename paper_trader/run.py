@@ -8,7 +8,7 @@ import csv
 import json
 import sys
 
-from . import config, data, portfolio, strategy
+from . import config, data, portfolio, refresh_universe, strategy
 
 # Windows consoles choke on some characters; keep prints safe.
 try:
@@ -98,7 +98,6 @@ def need_rebalance(state, today):
 
 def main():
     state = portfolio.load_state()
-    universe = data.load_universe()
     first_run = state.get("started_on") is None
     today_is_rebalance = True  # decided properly once we know today's date
 
@@ -114,8 +113,12 @@ def main():
     today = latest_trading_date(base_closes)
     today_is_rebalance = first_run or need_rebalance(state, today)
 
+    # The S&P 500 member list is only needed to rank on a rebalance day, so refresh and load
+    # it only then. On the other days we just reprice what we already hold.
     universe_closes = None
     if today_is_rebalance:
+        refresh_universe.main()
+        universe = data.load_universe()
         universe_closes = data.fetch_closes(universe)
         if universe_closes is None:
             print("Could not fetch the universe for rebalancing; aborting.")

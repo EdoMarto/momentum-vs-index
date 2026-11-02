@@ -33,11 +33,12 @@ engine and the live, side-by-side comparison, not a promise of market-beating re
 - `state/`: the portfolio (holdings, cash) and the daily history, committed so they persist between runs.
 - `web/` (TypeScript): the front-end source. It is bundled with esbuild into `docs/app.js` (Chart.js included).
 - `docs/`: the static site served by GitHub Pages.
-- `.github/workflows/update.yml`: a daily GitHub Action that refreshes the S&P 500 member list, runs the Python
-  job, and commits the new data, so the site updates on its own.
+- `.github/workflows/update.yml`: a daily GitHub Action that runs the Python job and commits the new data, so
+  the site updates on its own.
 
-The member list is refreshed from the official constituents before each run, so the strategy always ranks the
-current S&P 500 (if that download fails, the previous list is kept).
+On a rebalance day the member list is refreshed from the official constituents first, so the strategy always
+ranks the current S&P 500 (if that download fails, the previous list is kept). On the other days the job just
+reprices what the portfolio already holds, so the list is left alone.
 
 There is no server and no secret anywhere. Everything runs on free data and GitHub's own hosting.
 

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-02",
   "started_on": "2026-10-30",
   "start_capital": 10000.0,
   "benchmark": "SPY",
@@ -10,21 +10,40 @@
   },
   "series": {
     "dates": [
-      "2026-10-30"
+      "2026-10-30",
+      "2026-11-02"
     ],
     "strategy": [
-      10000.0
+      10000.0,
+      10031.68
     ]
   },
   "benchmark_series": {
     "dates": [
-      "2026-10-30"
+      "2026-10-30",
+      "2026-11-02"
     ],
     "values": [
-      10000.0
+      10000.0,
+      10045.65
     ]
   },
   "holdings": [
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies",
+      "weight": 0.05000000000000001
+    },
+    {
+      "ticker": "ILMN",
+      "name": "Illumina, Inc.",
+      "weight": 0.05000000000000001
+    },
+    {
+      "ticker": "A",
+      "name": "Agilent Technologies",
+      "weight": 0.05000000000000001
+    },
     {
       "ticker": "MRNA",
       "name": "Moderna",
@@ -41,13 +60,13 @@
       "weight": 0.05
     },
     {
-      "ticker": "DELL",
-      "name": "Dell Technologies",
+      "ticker": "PANW",
+      "name": "Palo Alto Networks",
       "weight": 0.05
     },
     {
-      "ticker": "PANW",
-      "name": "Palo Alto Networks",
+      "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise",
       "weight": 0.05
     },
     {
@@ -56,8 +75,8 @@
       "weight": 0.05
     },
     {
-      "ticker": "MPC",
-      "name": "Marathon Petroleum",
+      "ticker": "NTAP",
+      "name": "NetApp",
       "weight": 0.05
     },
     {
@@ -66,33 +85,13 @@
       "weight": 0.05
     },
     {
-      "ticker": "NTAP",
-      "name": "NetApp",
-      "weight": 0.05
-    },
-    {
       "ticker": "P",
       "name": "Everpure",
       "weight": 0.05
     },
     {
-      "ticker": "ILMN",
-      "name": "Illumina, Inc.",
-      "weight": 0.05
-    },
-    {
-      "ticker": "IQV",
-      "name": "IQVIA",
-      "weight": 0.05
-    },
-    {
-      "ticker": "VLO",
-      "name": "Valero Energy",
-      "weight": 0.05
-    },
-    {
-      "ticker": "MU",
-      "name": "Micron Technology",
+      "ticker": "MPC",
+      "name": "Marathon Petroleum",
       "weight": 0.05
     },
     {
@@ -101,23 +100,28 @@
       "weight": 0.05
     },
     {
+      "ticker": "IQV",
+      "name": "IQVIA",
+      "weight": 0.05
+    },
+    {
       "ticker": "PSX",
       "name": "Phillips 66",
       "weight": 0.05
     },
     {
-      "ticker": "ZBRA",
-      "name": "Zebra Technologies",
+      "ticker": "VLO",
+      "name": "Valero Energy",
       "weight": 0.05
-    },
-    {
-      "ticker": "HPE",
-      "name": "Hewlett Packard Enterprise",
-      "weight": 0.049999999999999996
     },
     {
       "ticker": "HUM",
       "name": "Humana",
+      "weight": 0.049999999999999996
+    },
+    {
+      "ticker": "ZBRA",
+      "name": "Zebra Technologies",
       "weight": 0.049999999999999996
     },
     {
@@ -127,6 +131,18 @@
     }
   ],
   "trades": [
+    {
+      "date": "2026-11-02",
+      "action": "SELL",
+      "ticker": "MU",
+      "name": "Micron Technology"
+    },
+    {
+      "date": "2026-11-02",
+      "action": "BUY",
+      "ticker": "A",
+      "name": "Agilent Technologies"
+    },
     {
       "date": "2026-10-30",
       "action": "BUY",
@@ -250,13 +266,13 @@
   ],
   "metrics": {
     "strategy": {
-      "total_return": 0.0,
-      "cagr": 0.0,
+      "total_return": 0.0031680000000000597,
+      "cagr": 0.46975295984863474,
       "max_drawdown": 0.0
     },
     "benchmark": {
-      "total_return": 0.0,
-      "cagr": 0.0,
+      "total_return": 0.00456499999999993,
+      "cagr": 0.7411120351397551,
       "max_drawdown": 0.0
     }
   }

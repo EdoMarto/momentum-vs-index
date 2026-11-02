@@ -26,9 +26,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Refresh the S&P 500 members
-        run: python -m paper_trader.refresh_universe
-
       - name: Run the daily update
         run: python -m paper_trader.run
 
