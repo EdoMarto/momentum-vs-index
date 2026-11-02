@@ -2,7 +2,7 @@ import { Chart, registerables } from "chart.js";
 
 Chart.register(...registerables);
 
-const REPO_URL = "https://github.com/EdoMarto/sp500-momentum-paper";
+const REPO_URL = "https://github.com/EdoMarto/momentum-vs-index";
 
 interface Metrics {
   total_return: number;

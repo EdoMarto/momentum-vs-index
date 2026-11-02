@@ -3,7 +3,7 @@
 A virtual portfolio that holds the strongest S&P 500 stocks and rebalances every month, tracked live against
 the S&P 500 itself. A small Python job updates it every day and a static TypeScript page shows the result.
 
-**Live site:** https://edomarto.github.io/sp500-momentum-paper/
+**Live site:** https://edomarto.github.io/momentum-vs-index/
 
 ## The point
 Beating the market is hard, and this project is built to show it. According to S&P's
