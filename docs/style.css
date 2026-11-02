@@ -29,7 +29,8 @@ header h1 { font-size: 26px; margin: 0 0 6px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 12px; }
 /* Strategy row and S&P 500 row: three aligned columns so the two rows line up. */
 .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-#cards-edge { margin-bottom: 24px; }
+#cards-edge { display: flex; justify-content: center; margin-bottom: 24px; }
+#cards-edge .card { width: 100%; max-width: 300px; text-align: center; }
 @media (max-width: 560px) { .cards-3 { grid-template-columns: 1fr; } }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
 .card .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
