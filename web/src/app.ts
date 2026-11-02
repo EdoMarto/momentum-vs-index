@@ -62,36 +62,58 @@ function renderCards(d: Data): void {
   );
 }
 
-function renderChart(d: Data): void {
+interface Range {
+  key: string;
+  days?: number; // window length in calendar days
+  ytd?: boolean; // from Jan 1 of the last point's year
+  all?: boolean; // whole history
+}
+const RANGES: Range[] = [
+  { key: "1D", days: 1 },
+  { key: "1M", days: 30 },
+  { key: "3M", days: 91 },
+  { key: "YTD", ytd: true },
+  { key: "1Y", days: 365 },
+  { key: "3Y", days: 365 * 3 },
+  { key: "5Y", days: 365 * 5 },
+  { key: "Max", all: true },
+];
+const DEFAULT_RANGE = "Max";
+
+let chart: Chart | null = null;
+let chartData: Data | null = null;
+
+function cutoffDate(dates: string[], r: Range): string | null {
+  if (r.all || dates.length === 0) return null;
+  const last = dates[dates.length - 1];
+  if (r.ytd) return `${last.slice(0, 4)}-01-01`;
+  const c = new Date(last + "T00:00:00Z");
+  c.setUTCDate(c.getUTCDate() - (r.days ?? 0));
+  return c.toISOString().slice(0, 10);
+}
+
+function drawChart(r: Range): void {
+  const d = chartData!;
+  const dates = d.series.dates;
+  const cutoff = cutoffDate(dates, r);
+  let idx = dates.map((_, i) => i);
+  if (cutoff) idx = idx.filter((i) => dates[i] >= cutoff);
+  if (idx.length < 2 && dates.length >= 2) idx = [dates.length - 2, dates.length - 1]; // keep a line visible
+
+  const labels = idx.map((i) => dates[i]);
+  const strat = idx.map((i) => d.series.strategy[i]);
   const benchByDate = new Map(d.benchmark_series.dates.map((dt, i) => [dt, d.benchmark_series.values[i]]));
-  const labels = d.series.dates;
   const benchAligned = labels.map((dt) => benchByDate.get(dt) ?? null);
 
+  if (chart) chart.destroy();
   const ctx = document.getElementById("chart") as HTMLCanvasElement;
-  new Chart(ctx, {
+  chart = new Chart(ctx, {
     type: "line",
     data: {
       labels,
       datasets: [
-        {
-          label: "Momentum strategy",
-          data: d.series.strategy,
-          borderColor: "#4c8dff",
-          fill: false,
-          tension: 0.15,
-          pointRadius: 0,
-          borderWidth: 2,
-        },
-        {
-          label: `${d.benchmark} (S&P 500)`,
-          data: benchAligned,
-          borderColor: "#f0a020",
-          fill: false,
-          tension: 0.15,
-          pointRadius: 0,
-          borderWidth: 2,
-          spanGaps: true,
-        },
+        { label: "Momentum strategy", data: strat, borderColor: "#4c8dff", fill: false, tension: 0.15, pointRadius: 0, borderWidth: 2 },
+        { label: `${d.benchmark} (S&P 500)`, data: benchAligned, borderColor: "#f0a020", fill: false, tension: 0.15, pointRadius: 0, borderWidth: 2, spanGaps: true },
       ],
     },
     options: {
@@ -99,24 +121,30 @@ function renderChart(d: Data): void {
       interaction: { mode: "index", intersect: false },
       scales: {
         x: { ticks: { maxTicksLimit: 8, color: "#9aa4b2" }, grid: { color: "#242a32" } },
-        y: {
-          ticks: {
-            color: "#9aa4b2",
-            callback: (v) => money(Number(v)),
-          },
-          grid: { color: "#242a32" },
-        },
+        y: { ticks: { color: "#9aa4b2", callback: (v) => money(Number(v)) }, grid: { color: "#242a32" } },
       },
       plugins: {
         legend: { labels: { color: "#e6e9ee" } },
-        tooltip: {
-          callbacks: {
-            label: (c) => `${c.dataset.label}: ${money(Number(c.parsed.y))}`,
-          },
-        },
+        tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${money(Number(c.parsed.y))}` } },
       },
     },
   });
+}
+
+function renderChart(d: Data): void {
+  chartData = d;
+  const bar = document.getElementById("chart-ranges")!;
+  bar.innerHTML = RANGES.map(
+    (r) => `<button class="range-btn${r.key === DEFAULT_RANGE ? " active" : ""}" data-range="${r.key}">${r.key}</button>`,
+  ).join("");
+  bar.querySelectorAll<HTMLButtonElement>("button[data-range]").forEach((b) =>
+    b.addEventListener("click", () => {
+      bar.querySelectorAll(".range-btn").forEach((x) => x.classList.remove("active"));
+      b.classList.add("active");
+      drawChart(RANGES.find((r) => r.key === b.dataset.range)!);
+    }),
+  );
+  drawChart(RANGES.find((r) => r.key === DEFAULT_RANGE)!);
 }
 
 function renderHoldings(d: Data): void {

@@ -41,6 +41,13 @@ header h1 { font-size: 26px; margin: 0 0 6px; }
 
 .chart-wrap { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 24px; }
 canvas { width: 100%; }
+.ranges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.range-btn {
+  background: transparent; color: var(--muted); border: 1px solid var(--line);
+  border-radius: 8px; padding: 4px 10px; font: inherit; font-size: 13px; cursor: pointer;
+}
+.range-btn:hover { border-color: var(--accent); color: var(--text); }
+.range-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
 
 .holdings { margin-top: 24px; }
 .holdings h2 { font-size: 16px; }
