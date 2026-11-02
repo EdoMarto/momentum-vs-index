@@ -215,7 +215,7 @@ def write_site_data(state, rows, prices, today):
         "series": {"dates": dates, "strategy": strat},
         "benchmark_series": {"dates": bench_dates, "values": bench_vals},
         "holdings": holdings,
-        "trades": list(reversed(read_trades())),  # most recent first
+        "trades": list(reversed(read_trades()))[:config.MAX_TRADES_ON_SITE],  # most recent first
         "metrics": {
             "strategy": metrics(strat, dates),
             "benchmark": metrics(bench_vals, bench_dates),

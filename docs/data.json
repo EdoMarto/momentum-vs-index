@@ -15,7 +15,7 @@
     ],
     "strategy": [
       10000.0,
-      10031.68
+      9926.36
     ]
   },
   "benchmark_series": {
@@ -25,109 +25,109 @@
     ],
     "values": [
       10000.0,
-      10045.65
+      10047.64
     ]
   },
   "holdings": [
     {
-      "ticker": "DELL",
-      "name": "Dell Technologies",
-      "weight": 0.05000000000000001
-    },
-    {
-      "ticker": "ILMN",
-      "name": "Illumina, Inc.",
-      "weight": 0.05000000000000001
-    },
-    {
-      "ticker": "A",
-      "name": "Agilent Technologies",
-      "weight": 0.05000000000000001
-    },
-    {
-      "ticker": "MRNA",
-      "name": "Moderna",
-      "weight": 0.05
-    },
-    {
-      "ticker": "CRWD",
-      "name": "CrowdStrike",
-      "weight": 0.05
-    },
-    {
-      "ticker": "CRL",
-      "name": "Charles River Laboratories",
-      "weight": 0.05
-    },
-    {
-      "ticker": "PANW",
-      "name": "Palo Alto Networks",
-      "weight": 0.05
-    },
-    {
-      "ticker": "HPE",
-      "name": "Hewlett Packard Enterprise",
-      "weight": 0.05
-    },
-    {
-      "ticker": "VEEV",
-      "name": "Veeva Systems",
-      "weight": 0.05
-    },
-    {
-      "ticker": "NTAP",
-      "name": "NetApp",
-      "weight": 0.05
-    },
-    {
-      "ticker": "RVTY",
-      "name": "Revvity",
-      "weight": 0.05
-    },
-    {
-      "ticker": "P",
-      "name": "Everpure",
-      "weight": 0.05
-    },
-    {
-      "ticker": "MPC",
-      "name": "Marathon Petroleum",
-      "weight": 0.05
+      "ticker": "ZBRA",
+      "name": "Zebra Technologies",
+      "weight": 0.05090282958460249
     },
     {
       "ticker": "BBY",
       "name": "Best Buy",
-      "weight": 0.05
-    },
-    {
-      "ticker": "IQV",
-      "name": "IQVIA",
-      "weight": 0.05
-    },
-    {
-      "ticker": "PSX",
-      "name": "Phillips 66",
-      "weight": 0.05
-    },
-    {
-      "ticker": "VLO",
-      "name": "Valero Energy",
-      "weight": 0.05
+      "weight": 0.05048371915265333
     },
     {
       "ticker": "HUM",
       "name": "Humana",
-      "weight": 0.049999999999999996
+      "weight": 0.05043879907663365
     },
     {
-      "ticker": "ZBRA",
-      "name": "Zebra Technologies",
-      "weight": 0.049999999999999996
+      "ticker": "MRNA",
+      "name": "Moderna",
+      "weight": 0.05035135021778749
+    },
+    {
+      "ticker": "P",
+      "name": "Everpure",
+      "weight": 0.05032692710414788
+    },
+    {
+      "ticker": "NTAP",
+      "name": "NetApp",
+      "weight": 0.05028694399262516
+    },
+    {
+      "ticker": "VEEV",
+      "name": "Veeva Systems",
+      "weight": 0.05016222566899438
+    },
+    {
+      "ticker": "RVTY",
+      "name": "Revvity",
+      "weight": 0.05015075026515856
+    },
+    {
+      "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise",
+      "weight": 0.0501267225603785
+    },
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies",
+      "weight": 0.04999620372789613
+    },
+    {
+      "ticker": "PANW",
+      "name": "Palo Alto Networks",
+      "weight": 0.04995684347526475
+    },
+    {
+      "ticker": "IQV",
+      "name": "IQVIA",
+      "weight": 0.049901313663856535
+    },
+    {
+      "ticker": "PSX",
+      "name": "Phillips 66",
+      "weight": 0.04987428760177601
+    },
+    {
+      "ticker": "A",
+      "name": "Agilent Technologies",
+      "weight": 0.04984871348520499
+    },
+    {
+      "ticker": "MPC",
+      "name": "Marathon Petroleum",
+      "weight": 0.049780065032873015
+    },
+    {
+      "ticker": "CRWD",
+      "name": "CrowdStrike",
+      "weight": 0.049711093566099165
+    },
+    {
+      "ticker": "ILMN",
+      "name": "Illumina, Inc.",
+      "weight": 0.049491325996933164
+    },
+    {
+      "ticker": "VLO",
+      "name": "Valero Energy",
+      "weight": 0.049451853209075115
     },
     {
       "ticker": "DDOG",
       "name": "Datadog",
-      "weight": 0.049999999999999996
+      "weight": 0.04939927540822428
+    },
+    {
+      "ticker": "CRL",
+      "name": "Charles River Laboratories",
+      "weight": 0.04935875720981532
     }
   ],
   "trades": [
@@ -266,13 +266,13 @@
   ],
   "metrics": {
     "strategy": {
-      "total_return": 0.0031680000000000597,
-      "cagr": 0.46975295984863474,
-      "max_drawdown": 0.0
+      "total_return": -0.007363999999999926,
+      "cagr": -0.5933833609526307,
+      "max_drawdown": -0.007363999999999926
     },
     "benchmark": {
-      "total_return": 0.00456499999999993,
-      "cagr": 0.7411120351397551,
+      "total_return": 0.0047639999999999905,
+      "cagr": 0.7836106625341233,
       "max_drawdown": 0.0
     }
   }

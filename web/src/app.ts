@@ -129,8 +129,9 @@ function renderTrades(d: Data): void {
     body.innerHTML = `<tr><td colspan="4">No trades yet. The first rebalance is logged here.</td></tr>`;
     return;
   }
+  const link = document.getElementById("trades-link") as HTMLAnchorElement;
+  link.href = `${REPO_URL}/blob/main/state/trades.csv`;
   body.innerHTML = trades
-    .slice(0, 100)
     .map((t) => {
       const buy = t.action === "BUY";
       const tag = `<span class="trade ${buy ? "buy" : "sell"}">${buy ? "Bought" : "Sold"}</span>`;
