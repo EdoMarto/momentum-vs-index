@@ -57,11 +57,18 @@ tr:last-child td { border-bottom: 0; }
 .filters input { flex: 1; min-width: 200px; }
 .filters input::placeholder { color: var(--muted); }
 
-/* Scrollable trade list: shows about 20 rows, then scrolls, with a pinned header. */
-.scroll { max-height: 740px; overflow-y: auto; border: 1px solid var(--line); border-radius: 12px; }
-.scroll table { border: 0; border-radius: 0; }
-.scroll thead th { position: sticky; top: 0; z-index: 1; background: var(--panel); }
 .empty { color: var(--muted); }
+
+/* Trade pages: 20 per page, pick a page below the table. */
+.pager { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 12px; }
+.page-btn {
+  background: var(--panel); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 6px 11px; font: inherit; cursor: pointer; min-width: 38px;
+}
+.page-btn:hover:not(:disabled) { border-color: var(--accent); }
+.page-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+.page-btn:disabled { opacity: .4; cursor: default; }
+.pager .gap { color: var(--muted); padding: 0 4px; }
 
 footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
 .disclaimer { max-width: 70ch; }
