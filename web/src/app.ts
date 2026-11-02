@@ -153,7 +153,6 @@ function applyTradeFilters(): void {
 
 function renderTrades(d: Data): void {
   allTrades = d.trades ?? [];
-  (document.getElementById("trades-link") as HTMLAnchorElement).href = `${REPO_URL}/blob/main/state/trades.csv`;
   document.getElementById("trade-search")!.addEventListener("input", applyTradeFilters);
   document.getElementById("trade-action")!.addEventListener("change", applyTradeFilters);
   applyTradeFilters();
