@@ -5,6 +5,13 @@ the S&P 500 itself. A small Python job updates it every day and a static TypeScr
 
 **Live site:** https://edomarto.github.io/sp500-momentum-paper/
 
+## The point
+Beating the market is hard, and this project is built to show it. According to S&P's
+[SPIVA](https://www.spglobal.com/spdji/en/research-insights/spiva/) scorecards, over 10 to 20 years around
+85 to 95% of actively managed US large-cap funds have returned less than the S&P 500. So the honest expectation
+is that a simple active strategy like this one loses to the index over time. Running it live, side by side with
+the benchmark, is a concrete way to see why a cheap passive index fund is usually the smarter default.
+
 ## The strategy
 Cross-sectional momentum, about as simple as it gets:
 - Every month, rank all S&P 500 stocks by their last 6 months of return.
