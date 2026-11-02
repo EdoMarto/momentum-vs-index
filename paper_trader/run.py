@@ -38,6 +38,24 @@ def write_history(rows):
         w.writerows(rows)
 
 
+def read_trades():
+    rows = []
+    if config.TRADES_FILE.exists():
+        with open(config.TRADES_FILE, newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                rows.append(r)
+    return rows
+
+
+def append_trades(new_rows):
+    rows = read_trades() + new_rows
+    config.TRADES_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(config.TRADES_FILE, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=["date", "action", "ticker", "name"])
+        w.writeheader()
+        w.writerows(rows)
+
+
 def upsert(rows, date, strat, bench):
     """Replace today's row if present, else append. Keeps one point per date."""
     for r in rows:
@@ -116,12 +134,24 @@ def main():
         if spy:
             state["benchmark_shares"] = config.START_CAPITAL / spy
 
-    # Rebalance into the top momentum names.
+    # Rebalance into the top momentum names, recording what entered and left the portfolio.
     if today_is_rebalance:
+        names = data.load_names()
+        before = set(state["holdings"])
         targets = strategy.pick_top(universe_closes)
         portfolio.rebalance(state, targets, prices)
+        after = set(state["holdings"])
+        trades = (
+            [{"date": today, "action": "BUY", "ticker": t, "name": names.get(t, t)}
+             for t in sorted(after - before)]
+            + [{"date": today, "action": "SELL", "ticker": t, "name": names.get(t, t)}
+               for t in sorted(before - after)]
+        )
+        if trades:
+            append_trades(trades)
         state["last_rebalance"] = today[:7]
-        print(f"Rebalanced on {today}: holding {len(state['holdings'])} names.")
+        print(f"Rebalanced on {today}: holding {len(state['holdings'])} names, "
+              f"{len(after - before)} bought, {len(before - after)} sold.")
 
     # Guard against a partial data fetch: if Yahoo dropped some of the tickers we hold,
     # the mark-to-market would be wrong. Bail out without changes; the next run fixes it.
@@ -182,6 +212,7 @@ def write_site_data(state, rows, prices, today):
         "series": {"dates": dates, "strategy": strat},
         "benchmark_series": {"dates": bench_dates, "values": bench_vals},
         "holdings": holdings,
+        "trades": list(reversed(read_trades())),  # most recent first
         "metrics": {
             "strategy": metrics(strat, dates),
             "benchmark": metrics(bench_vals, bench_dates),

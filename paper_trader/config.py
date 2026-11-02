@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parent.parent
 UNIVERSE_FILE = ROOT / "universe.txt"
 STATE_FILE = ROOT / "state" / "portfolio.json"
 HISTORY_FILE = ROOT / "state" / "history.csv"
+TRADES_FILE = ROOT / "state" / "trades.csv"
 SITE_DATA_FILE = ROOT / "docs" / "data.json"
 
 # Strategy

@@ -19,6 +19,7 @@ interface Data {
   series: { dates: string[]; strategy: number[] };
   benchmark_series: { dates: string[]; values: number[] };
   holdings: { ticker: string; name: string; weight: number }[];
+  trades: { date: string; action: string; ticker: string; name: string }[];
   metrics: { strategy: Metrics; benchmark: Metrics };
 }
 
@@ -120,6 +121,26 @@ function renderHoldings(d: Data): void {
     .join("");
 }
 
+function renderTrades(d: Data): void {
+  const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]!);
+  const body = document.querySelector("#trades tbody")!;
+  const trades = d.trades ?? [];
+  if (trades.length === 0) {
+    body.innerHTML = `<tr><td colspan="4">No trades yet. The first rebalance is logged here.</td></tr>`;
+    return;
+  }
+  body.innerHTML = trades
+    .slice(0, 100)
+    .map((t) => {
+      const buy = t.action === "BUY";
+      const tag = `<span class="trade ${buy ? "buy" : "sell"}">${buy ? "Bought" : "Sold"}</span>`;
+      return `<tr><td>${esc(t.date)}</td><td>${tag}</td><td class="tk">${esc(t.ticker)}</td><td>${esc(
+        t.name ?? t.ticker,
+      )}</td></tr>`;
+    })
+    .join("");
+}
+
 function renderMeta(d: Data): void {
   const meta = document.getElementById("meta")!;
   meta.textContent =
@@ -136,6 +157,7 @@ async function main(): Promise<void> {
   renderCards(d);
   renderChart(d);
   renderHoldings(d);
+  renderTrades(d);
   renderMeta(d);
 }
 

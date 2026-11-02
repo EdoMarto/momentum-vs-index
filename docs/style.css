@@ -36,12 +36,17 @@ header h1 { font-size: 26px; margin: 0 0 6px; }
 .chart-wrap { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 24px; }
 canvas { width: 100%; }
 
+.holdings { margin-top: 24px; }
 .holdings h2 { font-size: 16px; }
 table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 th, td { text-align: left; padding: 8px 14px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
 th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
 tr:last-child td { border-bottom: 0; }
-td:last-child, th:last-child { text-align: right; }
+#holdings td:last-child, #holdings th:last-child { text-align: right; }
+.tk { font-weight: 600; }
+.trade { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+.trade.buy { color: var(--good); background: rgba(53,192,138,0.12); }
+.trade.sell { color: var(--bad); background: rgba(229,96,77,0.12); }
 
 footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
 .disclaimer { max-width: 70ch; }

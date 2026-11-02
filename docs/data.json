@@ -126,6 +126,128 @@
       "weight": 0.049999999999999996
     }
   ],
+  "trades": [
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "ZBRA",
+      "name": "Zebra Technologies"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "VLO",
+      "name": "Valero Energy"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "VEEV",
+      "name": "Veeva Systems"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "RVTY",
+      "name": "Revvity"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "PSX",
+      "name": "Phillips 66"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "PANW",
+      "name": "Palo Alto Networks"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "P",
+      "name": "Everpure"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "NTAP",
+      "name": "NetApp"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "MU",
+      "name": "Micron Technology"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "MRNA",
+      "name": "Moderna"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "MPC",
+      "name": "Marathon Petroleum"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "IQV",
+      "name": "IQVIA"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "ILMN",
+      "name": "Illumina, Inc."
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "HUM",
+      "name": "Humana"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "DELL",
+      "name": "Dell Technologies"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "DDOG",
+      "name": "Datadog"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "CRWD",
+      "name": "CrowdStrike"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "CRL",
+      "name": "Charles River Laboratories"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "BUY",
+      "ticker": "BBY",
+      "name": "Best Buy"
+    }
+  ],
   "metrics": {
     "strategy": {
       "total_return": 0.0,
