@@ -121,10 +121,7 @@ function renderHoldings(d: Data): void {
 }
 
 type Trade = Data["trades"][number];
-const PAGE_SIZE = 20;
 let allTrades: Trade[] = [];
-let filtered: Trade[] = [];
-let currentPage = 1;
 
 function tradeRows(rows: Trade[]): string {
   if (rows.length === 0) {
@@ -141,63 +138,17 @@ function tradeRows(rows: Trade[]): string {
     .join("");
 }
 
-/** Page numbers to show, with -1 standing in for a gap (ellipsis). */
-function pageItems(current: number, total: number): number[] {
-  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
-  const items = new Set([1, total, current, current - 1, current + 1]);
-  const pages = [...items].filter((p) => p >= 1 && p <= total).sort((a, b) => a - b);
-  const out: number[] = [];
-  let prev = 0;
-  for (const p of pages) {
-    if (p - prev > 1) out.push(-1);
-    out.push(p);
-    prev = p;
-  }
-  return out;
-}
-
-function renderPager(total: number): void {
-  const pager = document.getElementById("pager")!;
-  if (total <= 1) {
-    pager.innerHTML = "";
-    return;
-  }
-  const btn = (label: string, page: number, opts: { disabled?: boolean; active?: boolean } = {}) =>
-    `<button class="page-btn${opts.active ? " active" : ""}" ${opts.disabled ? "disabled" : ""} data-page="${page}">${label}</button>`;
-  const parts = [btn("Prev", currentPage - 1, { disabled: currentPage === 1 })];
-  for (const p of pageItems(currentPage, total)) {
-    parts.push(p === -1 ? `<span class="gap">…</span>` : btn(String(p), p, { active: p === currentPage }));
-  }
-  parts.push(btn("Next", currentPage + 1, { disabled: currentPage === total }));
-  pager.innerHTML = parts.join("");
-  pager.querySelectorAll<HTMLButtonElement>("button[data-page]").forEach((b) =>
-    b.addEventListener("click", () => {
-      currentPage = Number(b.dataset.page);
-      renderPage();
-    }),
-  );
-}
-
-function renderPage(): void {
-  const total = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-  if (currentPage > total) currentPage = total;
-  const start = (currentPage - 1) * PAGE_SIZE;
-  document.querySelector("#trades tbody")!.innerHTML = tradeRows(filtered.slice(start, start + PAGE_SIZE));
-  document.getElementById("trades-count")!.textContent =
-    filtered.length === allTrades.length ? `(${allTrades.length})` : `(${filtered.length} of ${allTrades.length})`;
-  renderPager(total);
-}
-
 function applyTradeFilters(): void {
   const q = (document.getElementById("trade-search") as HTMLInputElement).value.trim().toLowerCase();
   const action = (document.getElementById("trade-action") as HTMLSelectElement).value;
-  filtered = allTrades.filter((t) => {
+  const filtered = allTrades.filter((t) => {
     if (action !== "ALL" && t.action !== action) return false;
     if (q && !`${t.ticker} ${t.name ?? ""}`.toLowerCase().includes(q)) return false;
     return true;
   });
-  currentPage = 1;
-  renderPage();
+  document.querySelector("#trades tbody")!.innerHTML = tradeRows(filtered);
+  document.getElementById("trades-count")!.textContent =
+    filtered.length === allTrades.length ? `(${allTrades.length})` : `(${filtered.length} of ${allTrades.length})`;
 }
 
 function renderTrades(d: Data): void {
