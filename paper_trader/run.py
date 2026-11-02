@@ -91,9 +91,19 @@ def metrics(values, dates):
     return {"total_return": total, "cagr": cagr, "max_drawdown": max_drawdown(values)}
 
 
+def is_month_end_trading_day(today):
+    """True when `today` is the last weekday of its month (the next weekday is a new month)."""
+    from datetime import date as _date, timedelta
+    d = _date.fromisoformat(today)
+    nxt = d + timedelta(days=1)
+    while nxt.weekday() >= 5:  # skip Saturday and Sunday
+        nxt += timedelta(days=1)
+    return nxt.month != d.month
+
+
 def need_rebalance(state, today):
-    month = today[:7]  # YYYY-MM
-    return state.get("last_rebalance") != month
+    # Rebalance once a month, on the last trading day of the month.
+    return is_month_end_trading_day(today) and state.get("last_rebalance") != today[:7]
 
 
 def main():
