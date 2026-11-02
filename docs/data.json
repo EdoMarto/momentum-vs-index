@@ -27,82 +27,102 @@
   "holdings": [
     {
       "ticker": "MRNA",
+      "name": "Moderna",
       "weight": 0.05
     },
     {
       "ticker": "CRWD",
+      "name": "CrowdStrike",
       "weight": 0.05
     },
     {
       "ticker": "CRL",
+      "name": "Charles River Laboratories",
       "weight": 0.05
     },
     {
       "ticker": "DELL",
+      "name": "Dell Technologies",
       "weight": 0.05
     },
     {
       "ticker": "PANW",
+      "name": "Palo Alto Networks",
       "weight": 0.05
     },
     {
       "ticker": "VEEV",
+      "name": "Veeva Systems",
       "weight": 0.05
     },
     {
       "ticker": "MPC",
+      "name": "Marathon Petroleum",
       "weight": 0.05
     },
     {
       "ticker": "RVTY",
+      "name": "Revvity",
       "weight": 0.05
     },
     {
       "ticker": "NTAP",
+      "name": "NetApp",
       "weight": 0.05
     },
     {
       "ticker": "P",
+      "name": "Everpure",
       "weight": 0.05
     },
     {
       "ticker": "ILMN",
+      "name": "Illumina, Inc.",
       "weight": 0.05
     },
     {
       "ticker": "IQV",
+      "name": "IQVIA",
       "weight": 0.05
     },
     {
       "ticker": "VLO",
+      "name": "Valero Energy",
       "weight": 0.05
     },
     {
       "ticker": "MU",
+      "name": "Micron Technology",
       "weight": 0.05
     },
     {
       "ticker": "BBY",
+      "name": "Best Buy",
       "weight": 0.05
     },
     {
       "ticker": "PSX",
+      "name": "Phillips 66",
       "weight": 0.05
     },
     {
       "ticker": "ZBRA",
+      "name": "Zebra Technologies",
       "weight": 0.05
     },
     {
       "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise",
       "weight": 0.049999999999999996
     },
     {
       "ticker": "HUM",
+      "name": "Humana",
       "weight": 0.049999999999999996
     },
     {
       "ticker": "DDOG",
+      "name": "Datadog",
       "weight": 0.049999999999999996
     }
   ],

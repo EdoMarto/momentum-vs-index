@@ -123,6 +123,14 @@ def main():
         state["last_rebalance"] = today[:7]
         print(f"Rebalanced on {today}: holding {len(state['holdings'])} names.")
 
+    # Guard against a partial data fetch: if Yahoo dropped some of the tickers we hold,
+    # the mark-to-market would be wrong. Bail out without changes; the next run fixes it.
+    missing = [t for t in state["holdings"] if prices.get(t) is None]
+    if missing:
+        print(f"Missing prices for {len(missing)} held tickers ({', '.join(missing[:5])}"
+              f"{'...' if len(missing) > 5 else ''}); aborting without changes.")
+        return
+
     strat_val = portfolio.strategy_value(state, prices)
     bench_val = portfolio.benchmark_value(state, prices)
 
@@ -147,13 +155,18 @@ def write_site_data(state, rows, prices, today):
     bench_vals = [b for _, b in bench_clean]
 
     # Current holdings with their weight in the portfolio.
+    names = data.load_names()
     total = portfolio.strategy_value(state, prices)
     holdings = []
     for ticker, shares in state["holdings"].items():
         price = prices.get(ticker)
         if price:
             val = shares * price
-            holdings.append({"ticker": ticker, "weight": val / total if total else 0.0})
+            holdings.append({
+                "ticker": ticker,
+                "name": names.get(ticker, ticker),
+                "weight": val / total if total else 0.0,
+            })
     holdings.sort(key=lambda h: h["weight"], reverse=True)
 
     payload = {

@@ -1,8 +1,19 @@
 """Price data access via Yahoo Finance (yfinance). Free daily close prices."""
 
+import json
+
 import yfinance as yf
 
 from . import config
+
+_NAMES_FILE = config.ROOT / "paper_trader" / "names.json"
+
+
+def load_names():
+    """Map of ticker -> company name, for showing friendly names on the site."""
+    if _NAMES_FILE.exists():
+        return json.loads(_NAMES_FILE.read_text(encoding="utf-8"))
+    return {}
 
 
 def load_universe():

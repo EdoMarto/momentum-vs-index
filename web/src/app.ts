@@ -18,7 +18,7 @@ interface Data {
   params: { top_n: number; lookback_trading_days: number; rebalance: string };
   series: { dates: string[]; strategy: number[] };
   benchmark_series: { dates: string[]; values: number[] };
-  holdings: { ticker: string; weight: number }[];
+  holdings: { ticker: string; name: string; weight: number }[];
   metrics: { strategy: Metrics; benchmark: Metrics };
 }
 
@@ -111,8 +111,12 @@ function renderChart(d: Data): void {
 
 function renderHoldings(d: Data): void {
   const body = document.querySelector("#holdings tbody")!;
+  const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]!);
   body.innerHTML = d.holdings
-    .map((h) => `<tr><td>${h.ticker}</td><td>${pct(h.weight)}</td></tr>`)
+    .map(
+      (h) =>
+        `<tr><td class="tk">${esc(h.ticker)}</td><td>${esc(h.name ?? h.ticker)}</td><td>${pct(h.weight)}</td></tr>`,
+    )
     .join("");
 }
 
