@@ -15,7 +15,7 @@
     ],
     "strategy": [
       10000.0,
-      9823.13
+      9584.8
     ]
   },
   "benchmark_series": {
@@ -25,109 +25,109 @@
     ],
     "values": [
       10000.0,
-      10057.69
+      9952.1
     ]
   },
   "holdings": [
     {
-      "ticker": "ZBRA",
-      "name": "Zebra Technologies",
-      "weight": 0.05152234027712135
-    },
-    {
       "ticker": "BBY",
       "name": "Best Buy",
-      "weight": 0.051459041718291215
+      "weight": 0.052433139407090004
     },
     {
-      "ticker": "CRL",
-      "name": "Charles River Laboratories",
-      "weight": 0.05060925342758145
+      "ticker": "ZBRA",
+      "name": "Zebra Technologies",
+      "weight": 0.0521471301200538
     },
     {
       "ticker": "MRNA",
       "name": "Moderna",
-      "weight": 0.05055133760352548
-    },
-    {
-      "ticker": "VEEV",
-      "name": "Veeva Systems",
-      "weight": 0.05054572785452303
-    },
-    {
-      "ticker": "MU",
-      "name": "Micron Technology",
-      "weight": 0.05051367617233274
-    },
-    {
-      "ticker": "RVTY",
-      "name": "Revvity",
-      "weight": 0.050439913739925436
+      "weight": 0.05195650527504793
     },
     {
       "ticker": "HUM",
       "name": "Humana",
-      "weight": 0.05042013967239377
+      "weight": 0.051651166135604075
     },
     {
-      "ticker": "IQV",
-      "name": "IQVIA",
-      "weight": 0.050416667105640474
-    },
-    {
-      "ticker": "PANW",
-      "name": "Palo Alto Networks",
-      "weight": 0.05002451936254916
+      "ticker": "VEEV",
+      "name": "Veeva Systems",
+      "weight": 0.05117245846074173
     },
     {
       "ticker": "PSX",
       "name": "Phillips 66",
-      "weight": 0.049807884894040005
-    },
-    {
-      "ticker": "HPE",
-      "name": "Hewlett Packard Enterprise",
-      "weight": 0.04976845049118548
-    },
-    {
-      "ticker": "DELL",
-      "name": "Dell Technologies",
-      "weight": 0.049688662120907875
+      "weight": 0.05072909887825989
     },
     {
       "ticker": "MPC",
       "name": "Marathon Petroleum",
-      "weight": 0.0496848008812636
+      "weight": 0.05048385114525059
     },
     {
-      "ticker": "DDOG",
-      "name": "Datadog",
-      "weight": 0.04933175937046051
+      "ticker": "IQV",
+      "name": "IQVIA",
+      "weight": 0.050431140263716104
     },
     {
-      "ticker": "NTAP",
-      "name": "NetApp",
-      "weight": 0.049283937325581284
+      "ticker": "RVTY",
+      "name": "Revvity",
+      "weight": 0.05037166359465806
     },
     {
       "ticker": "CRWD",
       "name": "CrowdStrike",
-      "weight": 0.04927224132195344
+      "weight": 0.05037031186360712
+    },
+    {
+      "ticker": "PANW",
+      "name": "Palo Alto Networks",
+      "weight": 0.05014839053436375
     },
     {
       "ticker": "ILMN",
       "name": "Illumina, Inc.",
-      "weight": 0.04922762126507968
+      "weight": 0.050085809055612045
     },
     {
       "ticker": "VLO",
       "name": "Valero Energy",
-      "weight": 0.04894086620360821
+      "weight": 0.049790333427752805
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology",
+      "weight": 0.04915000656028073
+    },
+    {
+      "ticker": "CRL",
+      "name": "Charles River Laboratories",
+      "weight": 0.0491367658190912
+    },
+    {
+      "ticker": "NTAP",
+      "name": "NetApp",
+      "weight": 0.048520208973594714
+    },
+    {
+      "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise",
+      "weight": 0.04847290771098922
+    },
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies",
+      "weight": 0.04829065244270627
+    },
+    {
+      "ticker": "DDOG",
+      "name": "Datadog",
+      "weight": 0.047915381097789436
     },
     {
       "ticker": "P",
       "name": "Everpure",
-      "weight": 0.0484911591920357
+      "weight": 0.04674307923379056
     }
   ],
   "trades": [
@@ -254,14 +254,14 @@
   ],
   "metrics": {
     "strategy": {
-      "total_return": -0.01768700000000012,
-      "cagr": -0.8861260728084903,
-      "max_drawdown": -0.01768700000000012
+      "total_return": -0.04152000000000011,
+      "cagr": -0.994275507831667,
+      "max_drawdown": -0.04152000000000011
     },
     "benchmark": {
-      "total_return": 0.005769000000000135,
-      "cagr": 1.014472764038612,
-      "max_drawdown": 0.0
+      "total_return": -0.004789999999999961,
+      "cagr": -0.4426621658284814,
+      "max_drawdown": -0.004789999999999961
     }
   }
 }
