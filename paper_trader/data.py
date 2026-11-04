@@ -57,3 +57,16 @@ def latest_prices(closes):
     """Last available close for each ticker as a plain dict, dropping missing values."""
     last = closes.ffill().iloc[-1]
     return {t: float(p) for t, p in last.items() if p == p}  # p == p drops NaN
+
+
+def latest_price_single(ticker, days=config.PRICE_LOOKBACK_DAYS):
+    """Latest close for one ticker, fetched on its own. Used to recover a name the batch
+    download dropped (Yahoo often returns a single-ticker request fine). None if unavailable."""
+    df = fetch_closes([ticker], days)
+    if df is None or ticker not in getattr(df, "columns", []):
+        return None
+    series = df[ticker].ffill()
+    if len(series) == 0:
+        return None
+    v = float(series.iloc[-1])
+    return v if v == v else None

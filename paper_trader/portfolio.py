@@ -16,6 +16,7 @@ def empty_state():
         "last_rebalance": None,    # YYYY-MM date of the last rebalance
         "benchmark_shares": None,  # shares of the benchmark bought once at the start
         "started_on": None,        # first date the portfolio was active
+        "last_prices": {},         # last seen close per ticker, a fallback when a fetch drops one
     }
 
 

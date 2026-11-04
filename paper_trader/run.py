@@ -166,13 +166,27 @@ def main():
         print(f"Rebalanced on {today}: holding {len(state['holdings'])} names, "
               f"{len(after - before)} bought, {len(before - after)} sold.")
 
-    # Guard against a partial data fetch: if Yahoo dropped some of the tickers we hold,
-    # the mark-to-market would be wrong. Bail out without changes; the next run fixes it.
-    missing = [t for t in state["holdings"] if prices.get(t) is None]
-    if missing:
-        print(f"Missing prices for {len(missing)} held tickers ({', '.join(missing[:5])}"
-              f"{'...' if len(missing) > 5 else ''}); aborting without changes.")
+    # Recover any tickers the batch download dropped, so one flaky symbol does not skip the day:
+    # first retry it on its own, then fall back to the last price we saw on an earlier run.
+    last_prices = state.get("last_prices", {}) or {}
+    needed = list(state["holdings"]) + [config.BENCHMARK]
+    for t in [t for t in needed if prices.get(t) is None]:
+        p = data.latest_price_single(t)
+        if p is not None:
+            prices[t] = p
+    for t in [t for t in needed if prices.get(t) is None]:
+        if last_prices.get(t) is not None:
+            prices[t] = last_prices[t]
+            print(f"Using last known price for {t} (Yahoo had no data today).")
+
+    # Only a truly unknown holding (never priced before) blocks the update.
+    unknown = [t for t in state["holdings"] if prices.get(t) is None]
+    if unknown:
+        print(f"No price for {len(unknown)} held tickers ({', '.join(unknown[:5])}); aborting.")
         return
+
+    # Remember today's prices as tomorrow's fallback.
+    state["last_prices"] = {**last_prices, **{t: v for t, v in prices.items() if v is not None}}
 
     strat_val = portfolio.strategy_value(state, prices)
     bench_val = portfolio.benchmark_value(state, prices)
