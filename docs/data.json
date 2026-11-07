@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "started_on": "2026-10-30",
   "start_capital": 10000.0,
   "benchmark": "SPY",
@@ -14,14 +14,16 @@
       "2026-11-02",
       "2026-11-03",
       "2026-11-04",
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ],
     "strategy": [
       10000.0,
       9584.8,
       9726.92,
       9476.9,
-      8826.8
+      8826.8,
+      8990.14
     ]
   },
   "benchmark_series": {
@@ -30,116 +32,118 @@
       "2026-11-02",
       "2026-11-03",
       "2026-11-04",
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ],
     "values": [
       10000.0,
       9952.1,
       9981.87,
       10146.75,
-      9699.36
+      9699.36,
+      9729.66
     ]
   },
   "holdings": [
     {
       "ticker": "MRNA",
       "name": "Moderna",
-      "weight": 0.061688925394598915
-    },
-    {
-      "ticker": "BBY",
-      "name": "Best Buy",
-      "weight": 0.05886650864801177
+      "weight": 0.06376132858777647
     },
     {
       "ticker": "HUM",
       "name": "Humana",
-      "weight": 0.05627534147906673
+      "weight": 0.058198085110396834
     },
     {
-      "ticker": "VEEV",
-      "name": "Veeva Systems",
-      "weight": 0.056128032973599445
+      "ticker": "BBY",
+      "name": "Best Buy",
+      "weight": 0.05793071675519597
     },
     {
       "ticker": "IQV",
       "name": "IQVIA",
-      "weight": 0.05612655263665109
+      "weight": 0.056552714015079865
     },
     {
       "ticker": "RVTY",
       "name": "Revvity",
-      "weight": 0.054419550829606984
+      "weight": 0.05494699066524198
     },
     {
-      "ticker": "ZBRA",
-      "name": "Zebra Technologies",
-      "weight": 0.05043326128106074
-    },
-    {
-      "ticker": "ILMN",
-      "name": "Illumina, Inc.",
-      "weight": 0.04992712903965328
-    },
-    {
-      "ticker": "VLO",
-      "name": "Valero Energy",
-      "weight": 0.04978147933544038
-    },
-    {
-      "ticker": "PSX",
-      "name": "Phillips 66",
-      "weight": 0.04947760656944112
+      "ticker": "VEEV",
+      "name": "Veeva Systems",
+      "weight": 0.053976242640576384
     },
     {
       "ticker": "CRL",
       "name": "Charles River Laboratories",
-      "weight": 0.04933427835892331
+      "weight": 0.052229167339142166
+    },
+    {
+      "ticker": "ILMN",
+      "name": "Illumina, Inc.",
+      "weight": 0.05022902514363723
+    },
+    {
+      "ticker": "ZBRA",
+      "name": "Zebra Technologies",
+      "weight": 0.049575454719869246
+    },
+    {
+      "ticker": "PSX",
+      "name": "Phillips 66",
+      "weight": 0.048319098253007293
+    },
+    {
+      "ticker": "VLO",
+      "name": "Valero Energy",
+      "weight": 0.048211834581470124
     },
     {
       "ticker": "CRWD",
       "name": "CrowdStrike",
-      "weight": 0.049129273603298114
+      "weight": 0.04817003521730251
     },
     {
       "ticker": "PANW",
       "name": "Palo Alto Networks",
-      "weight": 0.04871867104293488
+      "weight": 0.04770734635600825
     },
     {
       "ticker": "NTAP",
       "name": "NetApp",
-      "weight": 0.04817073777362987
+      "weight": 0.0472424866988711
     },
     {
       "ticker": "MPC",
       "name": "Marathon Petroleum",
-      "weight": 0.04805961262379219
+      "weight": 0.0466136721306352
     },
     {
       "ticker": "HPE",
       "name": "Hewlett Packard Enterprise",
-      "weight": 0.04540703650951976
-    },
-    {
-      "ticker": "DELL",
-      "name": "Dell Technologies",
-      "weight": 0.04230871139474882
-    },
-    {
-      "ticker": "DDOG",
-      "name": "Datadog",
-      "weight": 0.04203824366337149
+      "weight": 0.04519788263516315
     },
     {
       "ticker": "MU",
       "name": "Micron Technology",
-      "weight": 0.04202552783680858
+      "weight": 0.04337477128384664
+    },
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies",
+      "weight": 0.04306314831902964
     },
     {
       "ticker": "P",
       "name": "Everpure",
-      "weight": 0.04168351900584247
+      "weight": 0.042375945786365436
+    },
+    {
+      "ticker": "DDOG",
+      "name": "Datadog",
+      "weight": 0.042324053761384435
     }
   ],
   "trades": [
@@ -266,13 +270,13 @@
   ],
   "metrics": {
     "strategy": {
-      "total_return": -0.11732000000000009,
-      "cagr": -0.9994979175330049,
+      "total_return": -0.10098600000000002,
+      "cagr": -0.9961309916773612,
       "max_drawdown": -0.11732000000000009
     },
     "benchmark": {
-      "total_return": -0.03006399999999998,
-      "cagr": -0.844050163288519,
+      "total_return": -0.027034000000000002,
+      "cagr": -0.7606942556410093,
       "max_drawdown": -0.04409195062458415
     }
   }
