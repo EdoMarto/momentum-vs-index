@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-09",
   "started_on": "2026-10-30",
   "start_capital": 10000.0,
   "benchmark": "SPY",
@@ -15,7 +15,8 @@
       "2026-11-03",
       "2026-11-04",
       "2026-11-05",
-      "2026-11-06"
+      "2026-11-06",
+      "2026-11-09"
     ],
     "strategy": [
       10000.0,
@@ -23,7 +24,8 @@
       9726.92,
       9476.9,
       8826.8,
-      8990.14
+      8990.14,
+      9330.2
     ]
   },
   "benchmark_series": {
@@ -33,7 +35,8 @@
       "2026-11-03",
       "2026-11-04",
       "2026-11-05",
-      "2026-11-06"
+      "2026-11-06",
+      "2026-11-09"
     ],
     "values": [
       10000.0,
@@ -41,109 +44,110 @@
       9981.87,
       10146.75,
       9699.36,
-      9729.66
+      9729.66,
+      9959.91
     ]
   },
   "holdings": [
     {
       "ticker": "MRNA",
       "name": "Moderna",
-      "weight": 0.06376132858777647
-    },
-    {
-      "ticker": "HUM",
-      "name": "Humana",
-      "weight": 0.058198085110396834
+      "weight": 0.06501692562099463
     },
     {
       "ticker": "BBY",
       "name": "Best Buy",
-      "weight": 0.05793071675519597
+      "weight": 0.05954503864295564
     },
     {
       "ticker": "IQV",
       "name": "IQVIA",
-      "weight": 0.056552714015079865
+      "weight": 0.05589673150425066
     },
     {
       "ticker": "RVTY",
       "name": "Revvity",
-      "weight": 0.05494699066524198
+      "weight": 0.05485917808637406
     },
     {
-      "ticker": "VEEV",
-      "name": "Veeva Systems",
-      "weight": 0.053976242640576384
+      "ticker": "HUM",
+      "name": "Humana",
+      "weight": 0.05471679755235021
     },
     {
       "ticker": "CRL",
       "name": "Charles River Laboratories",
-      "weight": 0.052229167339142166
+      "weight": 0.05268435424861699
+    },
+    {
+      "ticker": "VEEV",
+      "name": "Veeva Systems",
+      "weight": 0.05246612058131782
     },
     {
       "ticker": "ILMN",
       "name": "Illumina, Inc.",
-      "weight": 0.05022902514363723
-    },
-    {
-      "ticker": "ZBRA",
-      "name": "Zebra Technologies",
-      "weight": 0.049575454719869246
-    },
-    {
-      "ticker": "PSX",
-      "name": "Phillips 66",
-      "weight": 0.048319098253007293
-    },
-    {
-      "ticker": "VLO",
-      "name": "Valero Energy",
-      "weight": 0.048211834581470124
+      "weight": 0.050135475491877086
     },
     {
       "ticker": "CRWD",
       "name": "CrowdStrike",
-      "weight": 0.04817003521730251
+      "weight": 0.04891374476350749
     },
     {
       "ticker": "PANW",
       "name": "Palo Alto Networks",
-      "weight": 0.04770734635600825
+      "weight": 0.04846585614691228
+    },
+    {
+      "ticker": "ZBRA",
+      "name": "Zebra Technologies",
+      "weight": 0.04846425587642951
+    },
+    {
+      "ticker": "PSX",
+      "name": "Phillips 66",
+      "weight": 0.047941147818776675
+    },
+    {
+      "ticker": "VLO",
+      "name": "Valero Energy",
+      "weight": 0.04783572006730526
     },
     {
       "ticker": "NTAP",
       "name": "NetApp",
-      "weight": 0.0472424866988711
+      "weight": 0.04737166967000338
     },
     {
       "ticker": "MPC",
       "name": "Marathon Petroleum",
-      "weight": 0.0466136721306352
+      "weight": 0.046980057890257026
     },
     {
       "ticker": "HPE",
       "name": "Hewlett Packard Enterprise",
-      "weight": 0.04519788263516315
+      "weight": 0.04624506925438701
     },
     {
       "ticker": "MU",
       "name": "Micron Technology",
-      "weight": 0.04337477128384664
+      "weight": 0.04440748906504981
     },
     {
       "ticker": "DELL",
       "name": "Dell Technologies",
-      "weight": 0.04306314831902964
+      "weight": 0.04373921979797046
     },
     {
       "ticker": "P",
       "name": "Everpure",
-      "weight": 0.042375945786365436
+      "weight": 0.04340160001936223
     },
     {
       "ticker": "DDOG",
       "name": "Datadog",
-      "weight": 0.042324053761384435
+      "weight": 0.04091354790130201
     }
   ],
   "trades": [
@@ -270,13 +274,13 @@
   ],
   "metrics": {
     "strategy": {
-      "total_return": -0.10098600000000002,
-      "cagr": -0.9961309916773612,
+      "total_return": -0.06697999999999993,
+      "cagr": -0.9205183144312605,
       "max_drawdown": -0.11732000000000009
     },
     "benchmark": {
-      "total_return": -0.027034000000000002,
-      "cagr": -0.7606942556410093,
+      "total_return": -0.00400900000000004,
+      "cagr": -0.13646688139535634,
       "max_drawdown": -0.04409195062458415
     }
   }
