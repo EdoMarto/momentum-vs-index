@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "started_on": "2026-10-30",
   "start_capital": 10000.0,
   "benchmark": "SPY",
@@ -21,7 +21,8 @@
       "2026-11-11",
       "2026-11-12",
       "2026-11-13",
-      "2026-11-16"
+      "2026-11-16",
+      "2026-11-17"
     ],
     "strategy": [
       10000.0,
@@ -35,7 +36,8 @@
       9439.8,
       9380.24,
       9275.58,
-      9040.69
+      9040.69,
+      8854.96
     ]
   },
   "benchmark_series": {
@@ -51,7 +53,8 @@
       "2026-11-11",
       "2026-11-12",
       "2026-11-13",
-      "2026-11-16"
+      "2026-11-16",
+      "2026-11-17"
     ],
     "values": [
       10000.0,
@@ -65,109 +68,110 @@
       10054.12,
       10018.53,
       9982.14,
-      9791.33
+      9791.33,
+      9691.95
     ]
   },
   "holdings": [
     {
       "ticker": "HUM",
       "name": "Humana",
-      "weight": 0.061543206150458475
+      "weight": 0.060394254750787066
     },
     {
       "ticker": "BBY",
       "name": "Best Buy",
-      "weight": 0.05975768524720341
+      "weight": 0.05808892934873004
     },
     {
       "ticker": "IQV",
       "name": "IQVIA",
-      "weight": 0.05476760812055944
-    },
-    {
-      "ticker": "MRNA",
-      "name": "Moderna",
-      "weight": 0.05369661640952445
-    },
-    {
-      "ticker": "VEEV",
-      "name": "Veeva Systems",
-      "weight": 0.05288800014738969
+      "weight": 0.05441034009435685
     },
     {
       "ticker": "RVTY",
       "name": "Revvity",
-      "weight": 0.0524345418371096
+      "weight": 0.05315310324618067
+    },
+    {
+      "ticker": "MRNA",
+      "name": "Moderna",
+      "weight": 0.05266582801875855
     },
     {
       "ticker": "CRL",
       "name": "Charles River Laboratories",
-      "weight": 0.05162933261504619
+      "weight": 0.05218436747942252
+    },
+    {
+      "ticker": "VEEV",
+      "name": "Veeva Systems",
+      "weight": 0.05203610087148524
     },
     {
       "ticker": "VLO",
       "name": "Valero Energy",
-      "weight": 0.05116374065480369
+      "weight": 0.051394829189678776
     },
     {
       "ticker": "PSX",
       "name": "Phillips 66",
-      "weight": 0.05096247983309168
+      "weight": 0.05129471246435277
     },
     {
       "ticker": "MPC",
       "name": "Marathon Petroleum",
-      "weight": 0.05001532633173287
-    },
-    {
-      "ticker": "NTAP",
-      "name": "NetApp",
-      "weight": 0.04938288355344355
+      "weight": 0.050228944917242085
     },
     {
       "ticker": "CRWD",
       "name": "CrowdStrike",
-      "weight": 0.04929417390715861
+      "weight": 0.04950963124425962
+    },
+    {
+      "ticker": "NTAP",
+      "name": "NetApp",
+      "weight": 0.049055084212879435
     },
     {
       "ticker": "ZBRA",
       "name": "Zebra Technologies",
-      "weight": 0.04900887858027639
-    },
-    {
-      "ticker": "PANW",
-      "name": "Palo Alto Networks",
-      "weight": 0.04778066942045256
-    },
-    {
-      "ticker": "HPE",
-      "name": "Hewlett Packard Enterprise",
-      "weight": 0.046752165830499695
+      "weight": 0.048798913897648295
     },
     {
       "ticker": "ILMN",
       "name": "Illumina, Inc.",
-      "weight": 0.046402336917759336
+      "weight": 0.04847864979598834
     },
     {
-      "ticker": "P",
-      "name": "Everpure",
-      "weight": 0.04515729601246022
+      "ticker": "PANW",
+      "name": "Palo Alto Networks",
+      "weight": 0.04773339717037945
+    },
+    {
+      "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise",
+      "weight": 0.04724079352826439
     },
     {
       "ticker": "MU",
       "name": "Micron Technology",
-      "weight": 0.044946263951539375
+      "weight": 0.04546777298028462
+    },
+    {
+      "ticker": "P",
+      "name": "Everpure",
+      "weight": 0.04526401063359219
     },
     {
       "ticker": "DELL",
       "name": "Dell Technologies",
-      "weight": 0.04178217258242523
+      "weight": 0.042956640789000064
     },
     {
       "ticker": "DDOG",
       "name": "Datadog",
-      "weight": 0.04063462189706563
+      "weight": 0.03964369536670914
     }
   ],
   "trades": [
@@ -294,14 +298,14 @@
   ],
   "metrics": {
     "strategy": {
-      "total_return": -0.09593099999999999,
-      "cagr": -0.8854545040332326,
+      "total_return": -0.11450400000000005,
+      "cagr": -0.9152132151221519,
       "max_drawdown": -0.11732000000000009
     },
     "benchmark": {
-      "total_return": -0.02086699999999997,
-      "cagr": -0.36433108806279746,
-      "max_drawdown": -0.04409195062458415
+      "total_return": -0.03080499999999997,
+      "cagr": -0.47001950140481097,
+      "max_drawdown": -0.04482223372015659
     }
   }
 }
