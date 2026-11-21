@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "started_on": "2026-10-30",
   "start_capital": 10000.0,
   "benchmark": "SPY",
@@ -24,7 +24,8 @@
       "2026-11-16",
       "2026-11-17",
       "2026-11-18",
-      "2026-11-19"
+      "2026-11-19",
+      "2026-11-20"
     ],
     "strategy": [
       10000.0,
@@ -41,7 +42,8 @@
       9040.69,
       8854.96,
       8783.01,
-      8704.24
+      8704.24,
+      8341.76
     ]
   },
   "benchmark_series": {
@@ -60,7 +62,8 @@
       "2026-11-16",
       "2026-11-17",
       "2026-11-18",
-      "2026-11-19"
+      "2026-11-19",
+      "2026-11-20"
     ],
     "values": [
       10000.0,
@@ -77,109 +80,110 @@
       9791.33,
       9691.95,
       9662.31,
-      9472.69
+      9472.69,
+      9127.85
     ]
   },
   "holdings": [
     {
       "ticker": "BBY",
       "name": "Best Buy",
-      "weight": 0.059617271593396345
-    },
-    {
-      "ticker": "RVTY",
-      "name": "Revvity",
-      "weight": 0.05546384335902923
-    },
-    {
-      "ticker": "IQV",
-      "name": "IQVIA",
-      "weight": 0.055404071410619
-    },
-    {
-      "ticker": "CRWD",
-      "name": "CrowdStrike",
-      "weight": 0.054369588255598136
-    },
-    {
-      "ticker": "PANW",
-      "name": "Palo Alto Networks",
-      "weight": 0.05336899335729509
+      "weight": 0.06138067098314219
     },
     {
       "ticker": "HUM",
       "name": "Humana",
-      "weight": 0.05266209501738846
+      "weight": 0.05639651376464352
     },
     {
-      "ticker": "CRL",
-      "name": "Charles River Laboratories",
-      "weight": 0.05241191753359213
+      "ticker": "PANW",
+      "name": "Palo Alto Networks",
+      "weight": 0.05624507557065699
+    },
+    {
+      "ticker": "RVTY",
+      "name": "Revvity",
+      "weight": 0.05544201037343255
+    },
+    {
+      "ticker": "IQV",
+      "name": "IQVIA",
+      "weight": 0.05511651339404793
+    },
+    {
+      "ticker": "CRWD",
+      "name": "CrowdStrike",
+      "weight": 0.05491550527873144
     },
     {
       "ticker": "MRNA",
       "name": "Moderna",
-      "weight": 0.05098438784245862
+      "weight": 0.05271593637638401
+    },
+    {
+      "ticker": "CRL",
+      "name": "Charles River Laboratories",
+      "weight": 0.05241964206253987
     },
     {
       "ticker": "VEEV",
       "name": "Veeva Systems",
-      "weight": 0.05087957727833823
+      "weight": 0.05098753846392311
     },
     {
       "ticker": "PSX",
       "name": "Phillips 66",
-      "weight": 0.04972539635509878
-    },
-    {
-      "ticker": "ZBRA",
-      "name": "Zebra Technologies",
-      "weight": 0.04969161522661046
-    },
-    {
-      "ticker": "NTAP",
-      "name": "NetApp",
-      "weight": 0.0490796954491313
-    },
-    {
-      "ticker": "ILMN",
-      "name": "Illumina, Inc.",
-      "weight": 0.04884344368135158
+      "weight": 0.050720541014527484
     },
     {
       "ticker": "VLO",
       "name": "Valero Energy",
-      "weight": 0.0486469617692711
+      "weight": 0.050118947619681664
     },
     {
-      "ticker": "HPE",
-      "name": "Hewlett Packard Enterprise",
-      "weight": 0.04773556571724723
+      "ticker": "ZBRA",
+      "name": "Zebra Technologies",
+      "weight": 0.0500291152663618
     },
     {
       "ticker": "MPC",
       "name": "Marathon Petroleum",
-      "weight": 0.047523435133369624
+      "weight": 0.04948876282249049
+    },
+    {
+      "ticker": "ILMN",
+      "name": "Illumina, Inc.",
+      "weight": 0.04897457442028179
+    },
+    {
+      "ticker": "NTAP",
+      "name": "NetApp",
+      "weight": 0.04744172069024792
+    },
+    {
+      "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise",
+      "weight": 0.04451115773310195
     },
     {
       "ticker": "P",
       "name": "Everpure",
-      "weight": 0.045572795925396814
+      "weight": 0.04345108836241764
     },
     {
       "ticker": "MU",
       "name": "Micron Technology",
-      "weight": 0.04482799947764449
-    },
-    {
-      "ticker": "DELL",
-      "name": "Dell Technologies",
-      "weight": 0.04238995633375314
+      "weight": 0.0402768687258676
     },
     {
       "ticker": "DDOG",
       "name": "Datadog",
-      "weight": 0.04080138928341015
+      "weight": 0.04009290796706872
+    },
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies",
+      "weight": 0.039274909110451346
     }
   ],
   "trades": [
@@ -306,14 +310,14 @@
   ],
   "metrics": {
     "strategy": {
-      "total_return": -0.12957600000000002,
-      "cagr": -0.9206887526880831,
-      "max_drawdown": -0.12957600000000002
+      "total_return": -0.16582399999999997,
+      "cagr": -0.9572981921214233,
+      "max_drawdown": -0.16582399999999997
     },
     "benchmark": {
-      "total_return": -0.05273099999999997,
-      "cagr": -0.628170282044077,
-      "max_drawdown": -0.06643112326607037
+      "total_return": -0.08721499999999993,
+      "cagr": -0.7954992578655585,
+      "max_drawdown": -0.10041638948431764
     }
   }
 }
